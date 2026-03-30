@@ -28,7 +28,13 @@ filme(para_sempre_alice, richard_glatzer, drama, 2014).
 filme(louco_e_estupido_amor, glenn_ficarra, comedia_romantica, 2011).
 filme(o_grande_lebowski, joel_coen, comedia, 1998).
 filme(longas_sombras, gregory_mosher, drama, 2024).
-
+filme(star_wars_uma_nova_esperanca, george_lucas, ficcao, 1977).
+filme(o_imperio_contra_ataca, irvin_kershner, ficcao, 1980).
+filme(tudo_pelo_poder, george_clooney, drama_politico, 2011).
+filme(o_homem_bicentenário, chris_columbus, ficcao, 1999).
+filme(animais_noturnos, tom_ford, suspense, 2016).
+filme(direito_de_amar, tom_ford, drama, 2009).
+filme(o_amor_nao_tira_ferias, nancy_meyers, comedia_romantica, 2006).
 
 % --- BASE DE DADOS: TRILHA SONORA ---
 % trilha(Filme, Compositor).
@@ -44,6 +50,14 @@ trilha(interstellar, hans_zimmer).
 trilha(oppenheimer, ludwig_goransson).
 trilha(bonequinha_de_luxo, henry_mancini).
 trilha(tropa_de_elite, pedro_bromfman).
+trilha(star_wars_uma_nova_esperanca, john_williams).
+trilha(o_imperio_contra_ataca, john_williams).
+trilha(o_homem_bicentenário, james_horner).
+trilha(tudo_pelo_poder, alexandre_desplat).
+trilha(animais_noturnos, abel_korzeniowski).
+trilha(direito_de_amar, abel_korzeniowski).
+trilha(tudo_pelo_poder, alexandre_desplat).
+trilha(o_amor_nao_tira_ferias, hans_zimmer).
 
 % --- BASE DE DADOS: OSCAR (Categorias Relevantes) ---
 % oscar(Filme, Categoria, Pessoa_ou_Pais, Status).
@@ -67,6 +81,14 @@ oscar(o_diabo_veste_prada, melhor_atriz, meryl_streep, indicado).
 oscar(para_sempre_alice, melhor_atriz, julianne_moore, vencedor).
 oscar(o_amor_custa_caro, melhor_direcao, joel_coen, indicado).
 oscar(viagem_a_paraiso, melhor_trilha_sonora, lorne_balfe, indicado).
+oscar(star_wars_uma_nova_esperanca, melhor_filme, gary_kurtz, indicado).
+oscar(star_wars_uma_nova_esperanca, melhor_trilha_sonora, john_williams, vencedor).
+oscar(tudo_pelo_poder, melhor_roteiro_adaptado, george_clooney, indicado).
+oscar(o_homem_bicentenário, melhor_maquiagem, greg_cannom, indicado).
+oscar(animais_noturnos, melhor_ator_coadjuvante, aaron_taylor_johnson, indicado).
+oscar(direito_de_amar, melhor_ator, colin_firth, indicado).
+oscar(tudo_pelo_poder, melhor_roteiro_adaptado, george_clooney, indicado).
+oscar(o_amor_nao_tira_ferias, melhor_trilha_sonora, hans_zimmer, indicado).
 
 % elenco(Filme, Ator_ou_Atriz).
 elenco(tropa_de_elite, wagner_moura).
@@ -76,7 +98,6 @@ elenco(o_diabo_veste_prada, meryl_streep).
 elenco(a_baba, bella_thorne).
 elenco(oceans_11, brad_pitt).
 elenco(amor_a_toda_prova, ryan_gosling).
-% elenco(Filme, Ator_ou_Atriz).
 elenco(o_amor_custa_caro, george_clooney).
 elenco(um_dia_especial, george_clooney).
 elenco(viagem_a_paraiso, george_clooney).
@@ -85,5 +106,22 @@ elenco(para_sempre_alice, julianne_moore).
 elenco(louco_e_estupido_amor, julianne_moore).
 elenco(o_grande_lebowski, julianne_moore).
 elenco(longas_sombras, julianne_moore).
-
+elenco(star_wars_uma_nova_esperanca, mark_hamill).
+elenco(star_wars_uma_nova_esperanca, harrison_ford).
+elenco(o_imperio_contra_ataca, harrison_ford).
+elenco(tudo_pelo_poder, ryan_gosling).
+elenco(tudo_pelo_poder, george_clooney).
+elenco(o_homem_bicentenário, robin_williams).
+elenco(animais_noturnos, amy_adams).
+elenco(animais_noturnos, jake_gyllenhaal).
+elenco(animais_noturnos, aaron_taylor_johnson).
+elenco(direito_de_amar, colin_firth).
+elenco(direito_de_amar, julianne_moore). % Mais um para a sua lista da Julianne Moore!
+elenco(tudo_pelo_poder, ryan_gosling).
+elenco(tudo_pelo_poder, george_clooney).
+elenco(tudo_pelo_poder, philip_seymour_hoffman).
+elenco(o_amor_nao_tira_ferias, cameron_diaz).
+elenco(o_amor_nao_tira_ferias, jude_law).
+elenco(o_amor_nao_tira_ferias, kate_winslet).
+elenco(o_amor_nao_tira_ferias, jack_black).
 
