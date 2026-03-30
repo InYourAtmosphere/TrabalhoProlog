@@ -22,6 +22,7 @@ filme(oceans_11, steven_soderbergh, acao, 2001).
 filme(o_agente_secreto, kleber_mendonca_filho, suspense, 2025).
 filme(ainda_estou_aqui, walter_salles, drama, 2024).
 
+
 % --- BASE DE DADOS: TRILHA SONORA ---
 % trilha(Filme, Compositor).
 trilha(interstellar, hans_zimmer).
