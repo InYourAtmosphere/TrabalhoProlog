@@ -21,6 +21,13 @@ filme(a_baba, mcg, terror, 2017).
 filme(oceans_11, steven_soderbergh, acao, 2001).
 filme(o_agente_secreto, kleber_mendonca_filho, suspense, 2025).
 filme(ainda_estou_aqui, walter_salles, drama, 2024).
+filme(o_amor_custa_caro, joel_coen, comedia_romantica, 2003).
+filme(um_dia_especial, michael_hoffman, comedia_romantica, 1996).
+filme(viagem_a_paraiso, ol_parker, comedia_romantica, 2022).
+filme(para_sempre_alice, richard_glatzer, drama, 2014).
+filme(louco_e_estupido_amor, glenn_ficarra, comedia_romantica, 2011).
+filme(o_grande_lebowski, joel_coen, comedia, 1998).
+filme(longas_sombras, gregory_mosher, drama, 2024).
 
 
 % --- BASE DE DADOS: TRILHA SONORA ---
@@ -57,6 +64,9 @@ oscar(o_agente_secreto, melhor_ator, wagner_moura, indicado).
 oscar(os_infiltrados, melhor_direcao, martin_scorsese, vencedor).
 oscar(interstellar, melhor_trilha_sonora, hans_zimmer, indicado).
 oscar(o_diabo_veste_prada, melhor_atriz, meryl_streep, indicado).
+oscar(para_sempre_alice, melhor_atriz, julianne_moore, vencedor).
+oscar(o_amor_custa_caro, melhor_direcao, joel_coen, indicado).
+oscar(viagem_a_paraiso, melhor_trilha_sonora, lorne_balfe, indicado).
 
 % elenco(Filme, Ator_ou_Atriz).
 elenco(tropa_de_elite, wagner_moura).
@@ -66,6 +76,15 @@ elenco(o_diabo_veste_prada, meryl_streep).
 elenco(a_baba, bella_thorne).
 elenco(oceans_11, brad_pitt).
 elenco(amor_a_toda_prova, ryan_gosling).
+% elenco(Filme, Ator_ou_Atriz).
+elenco(o_amor_custa_caro, george_clooney).
+elenco(um_dia_especial, george_clooney).
+elenco(viagem_a_paraiso, george_clooney).
+elenco(viagem_a_paraiso, julia_roberts).
+elenco(para_sempre_alice, julianne_moore).
+elenco(louco_e_estupido_amor, julianne_moore).
+elenco(o_grande_lebowski, julianne_moore).
+elenco(longas_sombras, julianne_moore).
 
 % Regra: Filme de um Diretor, com certa Trilha, reconhecido no Oscar, mas que NÃO é de um Gênero específico.
 busca_especifica(Diretor, Compositor, GeneroProibido, Filme) :-
