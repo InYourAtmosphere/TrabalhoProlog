@@ -10,6 +10,17 @@ filme(o_rei_leao, roger_allers, animacao, 1994).
 filme(duna, denis_villeneuve, ficcao, 2021).
 filme(o_agente_secreto, kleber_mendonca_filho, suspense, 2025).
 filme(ainda_estou_aqui, walter_salles, drama, 2024).
+filme(interstellar, christopher_nolan, ficcao, 2014).
+filme(oppenheimer, christopher_nolan, biografia, 2023).
+filme(o_irlandes, martin_scorsese, drama, 2019).
+filme(os_infiltrados, martin_scorsese, policial, 2006).
+filme(tropa_de_elite, jose_padilha, policial, 2007).
+filme(o_diabo_veste_prada, david_frankel, comedia, 2006).
+filme(amor_a_toda_prova, glenn_ficarra, romance, 2011).
+filme(a_baba, mcg, terror, 2017).
+filme(oceans_11, steven_soderbergh, acao, 2001).
+filme(o_agente_secreto, kleber_mendonca_filho, suspense, 2025).
+filme(ainda_estou_aqui, walter_salles, drama, 2024).
 
 % --- BASE DE DADOS: TRILHA SONORA ---
 % trilha(Filme, Compositor).
@@ -21,6 +32,10 @@ trilha(duna, hans_zimmer).
 trilha(o_curioso_caso_de_benjamin_button, alexandre_desplat).
 trilha(bonequinha_de_luxo, henry_mancini).
 trilha(a_pantera_cor_de_rosa, henry_mancini).
+trilha(interstellar, hans_zimmer).
+trilha(oppenheimer, ludwig_goransson).
+trilha(bonequinha_de_luxo, henry_mancini).
+trilha(tropa_de_elite, pedro_bromfman).
 
 % --- BASE DE DADOS: OSCAR (Categorias Relevantes) ---
 % oscar(Filme, Categoria, Pessoa_ou_Pais, Status).
@@ -36,7 +51,20 @@ oscar(o_curioso_caso_de_benjamin_button, melhor_direcao, david_fincher, indicado
 oscar(o_curioso_caso_de_benjamin_button, melhor_ator, brad_pitt, indicado).
 oscar(o_curioso_caso_de_benjamin_button, melhor_filme, kennedy_marshall, indicado).
 oscar(oppenheimer, melhor_filme, universal, vencedor).
+oscar(ainda_estou_aqui, melhor_atriz, fernanda_torres, vencedor).
+oscar(o_agente_secreto, melhor_ator, wagner_moura, indicado).
+oscar(os_infiltrados, melhor_direcao, martin_scorsese, vencedor).
+oscar(interstellar, melhor_trilha_sonora, hans_zimmer, indicado).
+oscar(o_diabo_veste_prada, melhor_atriz, meryl_streep, indicado).
 
+% elenco(Filme, Ator_ou_Atriz).
+elenco(tropa_de_elite, wagner_moura).
+elenco(o_agente_secreto, wagner_moura).
+elenco(ainda_estou_aqui, fernanda_torres).
+elenco(o_diabo_veste_prada, meryl_streep).
+elenco(a_baba, bella_thorne).
+elenco(oceans_11, brad_pitt).
+elenco(amor_a_toda_prova, ryan_gosling).
 % --- REGRAS AVANÇADAS DE BUSCA ---
 
 % 1. Filmes de um diretor específico que têm trilha de um compositor específico
