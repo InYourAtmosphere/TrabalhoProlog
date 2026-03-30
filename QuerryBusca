@@ -1,10 +1,15 @@
 % Regra: Filme de um Diretor, com certa Trilha, reconhecido no Oscar, mas que NÃO é de um Gênero específico.
 busca_especifica(Diretor, Compositor, GeneroProibido, Filme) :-
-    filme(Filme, Diretor, Genero, _),    % 1. Encontra o filme e o diretor
-    trilha(Filme, Compositor),           % 2. Garante que a trilha é do compositor X
-    oscar(Filme, _, _, _),               % 3. Garante que o filme teve participação no Oscar
-    Genero \= GeneroProibido.            % 4. Filtra para que o gênero NÃO seja o proibido
-    
+    filme(Filme, Diretor, Genero, _),    
+    trilha(Filme, Compositor),           
+    oscar(Filme, _, _, _),               
+    Genero \= GeneroProibido.            
+
+% 1. Encontra o filme e o diretor
+% 2. Garante que a trilha é do compositor X
+% 3. Garante que o filme teve participação no Oscar
+% 4. Filtra para que o gênero NÃO seja o proibido
+
 % --- REGRAS AVANÇADAS DE BUSCA ---
 
 % 1. Filmes de um diretor específico que têm trilha de um compositor específico
@@ -33,3 +38,14 @@ obras_por_epoca(Compositor, Inicio, Fim, Filme) :-
     trilha(Filme, Compositor),
     filme(Filme, _, _, Ano),
     Ano >= Inicio, Ano =< Fim.
+
+% Regra para identificar se um filme pertence à franquia Ocean's
+faz_parte_da_franquia_oceans(Filme) :-
+    filme(Filme, _, _, _),
+    sub_string(Filme, 0, 6, _, "oceans"). % Verifica se o nome começa com 'oceans'
+
+% Regra para encontrar atores que estão em TODA a trilogia (Clooney, Pitt, Damon)
+ator_da_trilogia(Ator) :-
+    elenco(oceans_11, Ator),
+    elenco(oceans_12, Ator),
+    elenco(oceans_13, Ator).
