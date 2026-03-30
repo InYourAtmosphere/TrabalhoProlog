@@ -35,6 +35,7 @@ filme(o_homem_bicentenário, chris_columbus, ficcao, 1999).
 filme(animais_noturnos, tom_ford, suspense, 2016).
 filme(direito_de_amar, tom_ford, drama, 2009).
 filme(o_amor_nao_tira_ferias, nancy_meyers, comedia_romantica, 2006).
+filme(a_grande_aposta, adam_mckay, drama, 2015).
 
 % =================================================================
 % 2. BASE DE DADOS: TRILHA SONORA
@@ -58,6 +59,7 @@ trilha(o_amor_nao_tira_ferias, hans_zimmer).
 trilha(oceans_11, david_holmes).
 trilha(oceans_12, david_holmes).
 trilha(oceans_13, david_holmes).
+trilha(a_grande_aposta, nicholas_britell).
 
 % =================================================================
 % 3. BASE DE DADOS: OSCAR
@@ -87,6 +89,8 @@ oscar(animais_noturnos, melhor_ator_coadjuvante, aaron_taylor_johnson, indicado)
 oscar(direito_de_amar, melhor_ator, colin_firth, indicado).
 oscar(o_amor_nao_tira_ferias, melhor_trilha_sonora, hans_zimmer, indicado).
 oscar(oceans_11, melhor_direcao, steven_soderbergh, indicado).
+oscar(a_grande_aposta, melhor_roteiro_adaptado, adam_mckay, vencedor).
+oscar(a_grande_aposta, melhor_filme, brad_pitt, indicado).
 
 % =================================================================
 % 4. BASE DE DADOS: ELENCO
@@ -133,6 +137,10 @@ elenco(o_amor_nao_tira_ferias, cameron_diaz).
 elenco(o_amor_nao_tira_ferias, jude_law).
 elenco(o_amor_nao_tira_ferias, kate_winslet).
 elenco(o_amor_nao_tira_ferias, jack_black).
+elenco(a_grande_aposta, christian_bale).
+elenco(a_grande_aposta, ryan_gosling).
+elenco(a_grande_aposta, brad_pitt).
+elenco(a_grande_aposta, steve_carell).
 
 % =================================================================
 % 5. REGRAS (Lógica do Sistema)
@@ -155,6 +163,7 @@ prestigio_musical(Filme, Compositor, Status) :-
 
 filme_premiado_elenco(Filme) :-
     oscar(Filme, Categoria, _, _),
+    member(Categoria, [melhor_ator, melhor_atriz, melhor_filme, melhor_direcao, melhor_roteiro_adaptado]).
     member(Categoria, [melhor_ator, melhor_atriz, melhor_filme, melhor_direcao]).
 
 brasileiros_no_oscar(Pessoa, Filme, Status) :-
@@ -173,4 +182,5 @@ faz_parte_da_franquia_oceans(Filme) :-
 ator_da_trilogia(Ator) :-
     elenco(oceans_11, Ator),
     elenco(oceans_12, Ator),
+    elenco(oceans_13, Ator).
     elenco(oceans_13, Ator).
