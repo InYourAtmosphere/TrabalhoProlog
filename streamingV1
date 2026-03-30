@@ -19,6 +19,8 @@ filme(o_diabo_veste_prada, david_frankel, comedia, 2006).
 filme(amor_a_toda_prova, glenn_ficarra, romance, 2011).
 filme(a_baba, mcg, terror, 2017).
 filme(oceans_11, steven_soderbergh, acao, 2001).
+filme(oceans_12, steven_soderbergh, acao, 2004).
+filme(oceans_13, steven_soderbergh, acao, 2007).
 filme(o_agente_secreto, kleber_mendonca_filho, suspense, 2025).
 filme(ainda_estou_aqui, walter_salles, drama, 2024).
 filme(o_amor_custa_caro, joel_coen, comedia_romantica, 2003).
@@ -58,6 +60,9 @@ trilha(animais_noturnos, abel_korzeniowski).
 trilha(direito_de_amar, abel_korzeniowski).
 trilha(tudo_pelo_poder, alexandre_desplat).
 trilha(o_amor_nao_tira_ferias, hans_zimmer).
+trilha(oceans_11, david_holmes).
+trilha(oceans_12, david_holmes).
+trilha(oceans_13, david_holmes).
 
 % --- BASE DE DADOS: OSCAR (Categorias Relevantes) ---
 % oscar(Filme, Categoria, Pessoa_ou_Pais, Status).
@@ -89,6 +94,7 @@ oscar(animais_noturnos, melhor_ator_coadjuvante, aaron_taylor_johnson, indicado)
 oscar(direito_de_amar, melhor_ator, colin_firth, indicado).
 oscar(tudo_pelo_poder, melhor_roteiro_adaptado, george_clooney, indicado).
 oscar(o_amor_nao_tira_ferias, melhor_trilha_sonora, hans_zimmer, indicado).
+oscar(oceans_11, melhor_direcao, steven_soderbergh, indicado).
 
 % elenco(Filme, Ator_ou_Atriz).
 elenco(tropa_de_elite, wagner_moura).
@@ -124,4 +130,16 @@ elenco(o_amor_nao_tira_ferias, cameron_diaz).
 elenco(o_amor_nao_tira_ferias, jude_law).
 elenco(o_amor_nao_tira_ferias, kate_winslet).
 elenco(o_amor_nao_tira_ferias, jack_black).
+elenco(oceans_11, george_clooney).
+elenco(oceans_11, brad_pitt).
+elenco(oceans_11, matt_damon).
+elenco(oceans_11, julia_roberts).
+elenco(oceans_12, george_clooney).
+elenco(oceans_12, brad_pitt).
+elenco(oceans_12, matt_damon).
+elenco(oceans_12, catherine_zeta_jones).
+elenco(oceans_13, george_clooney).
+elenco(oceans_13, brad_pitt).
+elenco(oceans_13, matt_damon).
+elenco(oceans_13, al_pacino).
 
