@@ -1,0 +1,67 @@
+% --- BASE DE DADOS: FILMES E DIRETORES ---
+% filme(Nome, Diretor, Genero, Ano).
+filme(interstellar, christopher_nolan, ficcao, 2014).
+filme(dunkirk, christopher_nolan, guerra, 2017).
+filme(oppenheimer, christopher_nolan, biografia, 2023).
+filme(o_curioso_caso_de_benjamin_button, david_fincher, drama, 2008).
+filme(bonequinha_de_luxo, blake_edwards, romance, 1961).
+filme(a_pantera_cor_de_rosa, blake_edwards, comedia, 1963).
+filme(o_rei_leao, roger_allers, animacao, 1994).
+filme(duna, denis_villeneuve, ficcao, 2021).
+filme(o_agente_secreto, kleber_mendonca_filho, suspense, 2025).
+filme(ainda_estou_aqui, walter_salles, drama, 2024).
+
+% --- BASE DE DADOS: TRILHA SONORA ---
+% trilha(Filme, Compositor).
+trilha(interstellar, hans_zimmer).
+trilha(dunkirk, hans_zimmer).
+trilha(oppenheimer, ludwig_goransson).
+trilha(o_rei_leao, hans_zimmer).
+trilha(duna, hans_zimmer).
+trilha(o_curioso_caso_de_benjamin_button, alexandre_desplat).
+trilha(bonequinha_de_luxo, henry_mancini).
+trilha(a_pantera_cor_de_rosa, henry_mancini).
+
+% --- BASE DE DADOS: OSCAR (Categorias Relevantes) ---
+% oscar(Filme, Categoria, Pessoa_ou_Pais, Status).
+oscar(ainda_estou_aqui, melhor_filme_internacional, brasil, vencedor).
+oscar(ainda_estou_aqui, melhor_atriz, fernanda_torres, vencedor).
+oscar(o_agente_secreto, melhor_ator, wagner_moura, indicado).
+oscar(interstellar, melhor_trilha_sonora, hans_zimmer, indicado).
+oscar(duna, melhor_trilha_sonora, hans_zimmer, vencedor).
+oscar(o_rei_leao, melhor_trilha_sonora, hans_zimmer, vencedor).
+oscar(bonequinha_de_luxo, melhor_trilha_sonora, henry_mancini, vencedor).
+oscar(a_pantera_cor_de_rosa, melhor_trilha_sonora, henry_mancini, indicado).
+oscar(o_curioso_caso_de_benjamin_button, melhor_direcao, david_fincher, indicado).
+oscar(o_curioso_caso_de_benjamin_button, melhor_ator, brad_pitt, indicado).
+oscar(o_curioso_caso_de_benjamin_button, melhor_filme, kennedy_marshall, indicado).
+oscar(oppenheimer, melhor_filme, universal, vencedor).
+
+% --- REGRAS AVANÇADAS DE BUSCA ---
+
+% 1. Filmes de um diretor específico que têm trilha de um compositor específico
+colaboracao(Diretor, Compositor, Filme) :-
+    filme(Filme, Diretor, _, _),
+    trilha(Filme, Compositor).
+
+% 2. Buscar por "Gênios da Trilha": Filmes que venceram ou foram indicados por trilha sonora
+prestigio_musical(Filme, Compositor, Status) :-
+    trilha(Filme, Compositor),
+    oscar(Filme, melhor_trilha_sonora, Compositor, Status).
+
+% 3. Recomendação "Oscar de Peso": Filmes com mais de uma indicação/vitória em categorias principais
+% (Ator, Atriz, Filme ou Direção)
+filme_premiado_elenco(Filme) :-
+    oscar(Filme, Categoria, _, _),
+    member(Categoria, [melhor_ator, melhor_atriz, melhor_filme, melhor_direcao]).
+
+% 4. Especial Brasil no Oscar: Lista todos os brasileiros reconhecidos
+brasileiros_no_oscar(Pessoa, Filme, Status) :-
+    oscar(Filme, _, Pessoa, Status),
+    (Pessoa == wagner_moura ; Pessoa == fernanda_torres ; Pessoa == brasil).
+
+% 5. Busca por era: Filmes de um compositor em uma década específica
+obras_por_epoca(Compositor, Inicio, Fim, Filme) :-
+    trilha(Filme, Compositor),
+    filme(Filme, _, _, Ano),
+    Ano >= Inicio, Ano =< Fim.
