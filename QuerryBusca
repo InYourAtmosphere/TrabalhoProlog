@@ -1,10 +1,15 @@
 % Regra: Filme de um Diretor, com certa Trilha, reconhecido no Oscar, mas que NÃO é de um Gênero específico.
 busca_especifica(Diretor, Compositor, GeneroProibido, Filme) :-
-    filme(Filme, Diretor, Genero, _),    % 1. Encontra o filme e o diretor
-    trilha(Filme, Compositor),           % 2. Garante que a trilha é do compositor X
-    oscar(Filme, _, _, _),               % 3. Garante que o filme teve participação no Oscar
-    Genero \= GeneroProibido.            % 4. Filtra para que o gênero NÃO seja o proibido
-    
+    filme(Filme, Diretor, Genero, _),    
+    trilha(Filme, Compositor),           
+    oscar(Filme, _, _, _),               
+    Genero \= GeneroProibido.            
+
+% 1. Encontra o filme e o diretor
+% 2. Garante que a trilha é do compositor X
+% 3. Garante que o filme teve participação no Oscar
+% 4. Filtra para que o gênero NÃO seja o proibido
+
 % --- REGRAS AVANÇADAS DE BUSCA ---
 
 % 1. Filmes de um diretor específico que têm trilha de um compositor específico
