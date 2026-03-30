@@ -143,3 +143,54 @@ elenco(oceans_13, brad_pitt).
 elenco(oceans_13, matt_damon).
 elenco(oceans_13, al_pacino).
 
+% Regra: Filme de um Diretor, com certa Trilha, reconhecido no Oscar, mas que NÃO é de um Gênero específico.
+busca_especifica(Diretor, Compositor, GeneroProibido, Filme) :-
+    filme(Filme, Diretor, Genero, _),    
+    trilha(Filme, Compositor),           
+    oscar(Filme, _, _, _),               
+    Genero \= GeneroProibido.            
+
+% 1. Encontra o filme e o diretor
+% 2. Garante que a trilha é do compositor X
+% 3. Garante que o filme teve participação no Oscar
+% 4. Filtra para que o gênero NÃO seja o proibido
+
+% --- REGRAS AVANÇADAS DE BUSCA ---
+
+% 1. Filmes de um diretor específico que têm trilha de um compositor específico
+colaboracao(Diretor, Compositor, Filme) :-
+    filme(Filme, Diretor, _, _),
+    trilha(Filme, Compositor).
+
+% 2. Buscar por "Gênios da Trilha": Filmes que venceram ou foram indicados por trilha sonora
+prestigio_musical(Filme, Compositor, Status) :-
+    trilha(Filme, Compositor),
+    oscar(Filme, melhor_trilha_sonora, Compositor, Status).
+
+% 3. Recomendação "Oscar de Peso": Filmes com mais de uma indicação/vitória em categorias principais
+% (Ator, Atriz, Filme ou Direção)
+filme_premiado_elenco(Filme) :-
+    oscar(Filme, Categoria, _, _),
+    member(Categoria, [melhor_ator, melhor_atriz, melhor_filme, melhor_direcao]).
+
+% 4. Especial Brasil no Oscar: Lista todos os brasileiros reconhecidos
+brasileiros_no_oscar(Pessoa, Filme, Status) :-
+    oscar(Filme, _, Pessoa, Status),
+    (Pessoa == wagner_moura ; Pessoa == fernanda_torres ; Pessoa == brasil).
+
+% 5. Busca por era: Filmes de um compositor em uma década específica
+obras_por_epoca(Compositor, Inicio, Fim, Filme) :-
+    trilha(Filme, Compositor),
+    filme(Filme, _, _, Ano),
+    Ano >= Inicio, Ano =< Fim.
+
+% Regra para identificar se um filme pertence à franquia Ocean's
+faz_parte_da_franquia_oceans(Filme) :-
+    filme(Filme, _, _, _),
+    sub_string(Filme, 0, 6, _, "oceans"). % Verifica se o nome começa com 'oceans'
+
+% Regra para encontrar atores que estão em TODA a trilogia (Clooney, Pitt, Damon)
+ator_da_trilogia(Ator) :-
+    elenco(oceans_11, Ator),
+    elenco(oceans_12, Ator),
+    elenco(oceans_13, Ator).
