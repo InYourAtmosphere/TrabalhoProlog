@@ -28,6 +28,11 @@ filme_premiado_elenco(Filme) :-
     oscar(Filme, Categoria, _, _),
     member(Categoria, [melhor_ator, melhor_atriz, melhor_filme, melhor_direcao]).
 
+%filme_premiado_elenco(Filme) :-
+%    oscar(Filme, Categoria, _, _),
+%   member(Categoria, [melhor_ator, melhor_atriz, melhor_filme, melhor_direcao, melhor_roteiro_adaptado]).
+%   member(Categoria, [melhor_ator, melhor_atriz, melhor_filme, melhor_direcao]).
+
 % 4. Especial Brasil no Oscar: Lista todos os brasileiros reconhecidos
 brasileiros_no_oscar(Pessoa, Filme, Status) :-
     oscar(Filme, _, Pessoa, Status),

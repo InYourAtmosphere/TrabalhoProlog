@@ -164,7 +164,6 @@ prestigio_musical(Filme, Compositor, Status) :-
 filme_premiado_elenco(Filme) :-
     oscar(Filme, Categoria, _, _),
     member(Categoria, [melhor_ator, melhor_atriz, melhor_filme, melhor_direcao, melhor_roteiro_adaptado]).
-    member(Categoria, [melhor_ator, melhor_atriz, melhor_filme, melhor_direcao]).
 
 brasileiros_no_oscar(Pessoa, Filme, Status) :-
     oscar(Filme, _, Pessoa, Status),
@@ -182,5 +181,4 @@ faz_parte_da_franquia_oceans(Filme) :-
 ator_da_trilogia(Ator) :-
     elenco(oceans_11, Ator),
     elenco(oceans_12, Ator),
-    elenco(oceans_13, Ator).
     elenco(oceans_13, Ator).
