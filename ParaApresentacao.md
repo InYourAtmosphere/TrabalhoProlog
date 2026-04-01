@@ -4,15 +4,15 @@
     "Quero um filme do Nolan com trilha do Zimmer que tenha ido ao Oscar e não seja policial."
 
     busca_especifica(christopher_nolan, hans_zimmer, policial, Filme).
-    Resultado esperado: interstellar, dunkirk.
+  Resultado esperado: interstellar, dunkirk.
 
   B. Interseção de Conjuntos (Elenco da Trilogia)
     "Quais atores participaram de todos os filmes da franquia Ocean's?"
 
     ator_da_trilogia(Ator).
-    Resultado esperado: Ator = brad_pitt
-                        Ator = george_clooney
-                        Ator = matt_damon
+  Resultado esperado: Ator = brad_pitt
+                      Ator = george_clooney
+                      Ator = matt_damon
 
   C. Busca com Disjunção (Brasil no Oscar)
     "Quais brasileiros (ou o filme nacional) foram premiados ou indicados?"
